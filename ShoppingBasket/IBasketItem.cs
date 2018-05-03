@@ -11,7 +11,7 @@ namespace ShoppingBasket
         string ProductName { get; }
         double LatestPrice { get; }
         int Quantity { get; set; }
-        double TotalItemValue { get; set; }
+        double TotalItemValue { get; }
         double Discount { get; }
 
         void AddItems(int increase);

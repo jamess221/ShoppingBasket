@@ -11,7 +11,9 @@ namespace ShoppingBasket
         public string ProductName { get; private set; }
         public double LatestPrice { get; private set; }
         public int Quantity { get; set; }
-        public double TotalItemValue { get => this.Quantity*this.LatestPrice; set => TotalItemValue = value; }
+
+        //Calculate the total item value inside the getter- accounting for any discount percentage
+        public double TotalItemValue { get => (Quantity*LatestPrice/100)*(1-(Discount/100)) ;}
         public double Discount { get; private set; }
 
         public BasketItem(string productName, double latestPrice, int quantity, double discount)
