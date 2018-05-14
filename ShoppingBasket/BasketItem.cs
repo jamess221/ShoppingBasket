@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingBasket
 {
-    class BasketItem : IBasketItem
+    class BasketItem : IBasketItem, IComparable<BasketItem>
     {
         public string ProductName { get; private set; }
         public double LatestPrice { get; private set; }
@@ -16,14 +16,18 @@ namespace ShoppingBasket
         public double TotalItemValue { get => (Quantity*LatestPrice/100)*(1-(Discount/100)) ;}
         public double Discount { get; private set; }
 
-        public BasketItem(string productName, double latestPrice, int quantity, double discount)
+        public BasketItem(string productName, double latestPrice, double discount)
         {
             ProductName = productName;
             LatestPrice = latestPrice;
-            Quantity = quantity;
+            Quantity = 0;
             Discount = discount;
-
         }
+
+		public int CompareTo(BasketItem that)
+		{
+			return this.Quantity.CompareTo(that.Quantity);
+		}
 
         public void AddItems(int increase)
         {
