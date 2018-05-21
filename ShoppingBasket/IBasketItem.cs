@@ -11,10 +11,10 @@ namespace ShoppingBasket
         string ProductName { get; }
         double LatestPrice { get; }
         int Quantity { get; set; }
-        double TotalItemValue { get; }
+        double TotalItemCost { get; }
         double Discount { get; }
 
+        // Format of method used to increase the quantity of basket item
         void AddItems(int increase);
-
     }
 }

@@ -11,21 +11,22 @@ namespace ShoppingBasket
         public string ProductName { get; private set; }
         public double LatestPrice { get; private set; }
         public int Quantity { get; set; }
-
-        //Calculate the total item value inside the getter- accounting for any discount percentage
-        public double TotalItemValue { get => (Quantity*LatestPrice/100)*(1-(Discount/100)) ;}
         public double Discount { get; private set; }
 
-        public BasketItem(string productName, double latestPrice, double discount)
+        //Calculate the total item cost accounting for discount
+        public double TotalItemCost { get => (Quantity*LatestPrice)*(1-(Discount/100)) ;}
+
+        public BasketItem(string productName, double latestPrice, int quantity, double discount = 0)
         {
             ProductName = productName;
             LatestPrice = latestPrice;
-            Quantity = 0;
+            Quantity = quantity;
             Discount = discount;
         }
 
 		public int CompareTo(BasketItem that)
 		{
+            // Define the property of the class that separate instances of the class will be compared via
 			return this.Quantity.CompareTo(that.Quantity);
 		}
 
