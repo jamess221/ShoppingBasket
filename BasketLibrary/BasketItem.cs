@@ -14,7 +14,6 @@ namespace BasketLibrary
         public int Discount { get; private set; }
         public int DiscountGroup { get; private set; }
 
-
         //Calculate the total item cost accounting for discount
         public double TotalItemCost { get => (Quantity * LatestPrice) * (1 - (Discount / 100)); }
 

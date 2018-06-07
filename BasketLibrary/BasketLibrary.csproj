@@ -54,6 +54,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ShoppingBasket.cs" />
+    <Compile Include="SupermarketDataSet.cs">
+      <DependentUpon>SupermarketDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SupermarketDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -12,8 +12,8 @@ namespace BasketLibrary
         double LatestPrice { get; }
         int Quantity { get; set; }
         double TotalItemCost { get; }
-        int Discount { get; set; }
-        int DiscountGroup { get; set; }
+        int Discount { get; }
+        int DiscountGroup { get; }
 
         int CompareTo(BasketItem that);
 
