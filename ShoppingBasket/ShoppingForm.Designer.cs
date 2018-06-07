@@ -122,7 +122,7 @@
             // 
             this.basketText.Location = new System.Drawing.Point(32, 133);
             this.basketText.Name = "basketText";
-            this.basketText.Size = new System.Drawing.Size(796, 173);
+            this.basketText.Size = new System.Drawing.Size(967, 173);
             this.basketText.TabIndex = 8;
             this.basketText.Text = "";
             // 
@@ -151,6 +151,7 @@
             this.noItemsText.ReadOnly = true;
             this.noItemsText.Size = new System.Drawing.Size(100, 20);
             this.noItemsText.TabIndex = 11;
+            this.noItemsText.Text = "0";
             // 
             // totalLabel
             // 
@@ -168,10 +169,11 @@
             this.totalText.ReadOnly = true;
             this.totalText.Size = new System.Drawing.Size(100, 20);
             this.totalText.TabIndex = 13;
+            this.totalText.Text = "£0";
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(845, 36);
+            this.addButton.Location = new System.Drawing.Point(1005, 36);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 14;
@@ -181,7 +183,7 @@
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(845, 133);
+            this.removeButton.Location = new System.Drawing.Point(1005, 131);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 15;
@@ -190,7 +192,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(845, 338);
+            this.exitButton.Location = new System.Drawing.Point(1005, 328);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 16;
@@ -201,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 372);
+            this.ClientSize = new System.Drawing.Size(1092, 373);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);

@@ -8,20 +8,28 @@ namespace BasketLibrary
 {
     public class ShoppingBasket
     {
-        public List<BasketItem> Items { get; set; }
+        public List<BasketItem> BasketItems { get; set; }
 
         public List<Offer> Offers { get; set; }
 
         public double BasketTotal
         {
             // Return the sum of the TotalItemCost property across all BasketItem in the items list
-            get { return Items.Sum(item => item.TotalItemValue); }
+            get { return BasketItems.Sum(item => item.TotalItemValue); }
+        }
+
+        public int NumberOfItems
+        {
+            get
+            {
+                return BasketItems.Sum(item => item.Quantity);
+            }
         }
 
         public ShoppingBasket()
         {
             // Instantiate new list of BasketItem and Offer
-            Items = new List<BasketItem>();
+            BasketItems = new List<BasketItem>();
             Offers = new List<Offer>();
         }
 
@@ -31,7 +39,7 @@ namespace BasketLibrary
             try
             {
                 // If exists, increase the quantity by passed amount
-                Items.Find(item => item.ProductName == name).AddItems(quantity);
+                BasketItems.Find(item => item.ProductName == name).AddItems(quantity);
             }
             catch (Exception e)
             {
@@ -46,7 +54,7 @@ namespace BasketLibrary
 
                 // if does not exist, instantiate new BasketItem with passed parameters
                 BasketItem newProduct = new BasketItem(name, price, quantity, linkedOffer);
-                Items.Add(newProduct);
+                BasketItems.Add(newProduct);
             }
         }
 
@@ -58,7 +66,7 @@ namespace BasketLibrary
         public void ClearBasket()
         {
             // Set quantity of each product in the basket to 0
-            foreach (BasketItem item in Items)
+            foreach (BasketItem item in BasketItems)
             {
                 item.Quantity = 0;
             }
@@ -66,7 +74,7 @@ namespace BasketLibrary
 
         public BasketItem Find(string name)
         {
-            return Items.Find(item => item.ProductName == name);
+            return BasketItems.Find(item => item.ProductName == name);
         }
     }
 }

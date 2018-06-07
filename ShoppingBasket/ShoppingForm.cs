@@ -113,16 +113,20 @@ namespace ShoppingBasket
 
         private void DrawBasket()
         {
+            // Update display to show current state of basket
             StringBuilder sb = new StringBuilder();
-            foreach(BasketItem item in basket.Items)
+            foreach(BasketItem item in basket.BasketItems)
             {
                 if(item.Quantity > 0)
                 {
-                    sb.AppendLine(String.Format("{0,0}{1,10}{2,15}{3,15}{4,20}{5,25}{6,30}",
+                    sb.AppendLine(String.Format("{0,-35}{1,-20}{2,-100}£{3,-15}£{4,-15}£{5,-15}{6,-50}",
                         item.ProductName, item.Quantity, item.Offer.Description, item.LatestPrice,
                         item.DiscountedPrice, item.TotalItemValue, ""));
                 }
             }
+
+            totalText.Text = String.Format("£{0}", basket.BasketTotal);
+            noItemsText.Text = Convert.ToString(basket.NumberOfItems);
 
             basketText.Text = sb.ToString();
         }
