@@ -1,0 +1,7 @@
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\BasketLibrary\obj\Debug\BasketLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\BasketLibrary\bin\Debug\BasketLibrary.dll
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\BasketLibrary\bin\Debug\BasketLibrary.pdb
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\BasketLibrary\obj\Debug\BasketLibrary.dll
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\BasketLibrary\obj\Debug\BasketLibrary.pdb
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\BasketLibrary\bin\Debug\BasketLibrary.dll.config
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\BasketLibrary\obj\Debug\BasketLibrary.csprojResolveAssemblyReference.cache

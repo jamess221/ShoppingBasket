@@ -18,3 +18,16 @@ C:/Users/Administrator/source/repos/ShoppingBasket/ShoppingBasket/obj/Debug/Shop
 /Users/tabology/Projects/ShoppingBasket/ShoppingBasket/obj/Debug/ShoppingBasket.csproj.CoreCompileInputs.cache
 /Users/tabology/Projects/ShoppingBasket/ShoppingBasket/obj/Debug/ShoppingBasket.exe
 /Users/tabology/Projects/ShoppingBasket/ShoppingBasket/obj/Debug/ShoppingBasket.pdb
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.exe.config
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.exe
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.pdb
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.Form1.resources
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.Properties.Resources.resources
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.exe
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.pdb
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.dll
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.pdb
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.dll.config

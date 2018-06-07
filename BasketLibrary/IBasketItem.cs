@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShoppingBasket
+namespace BasketLibrary
 {
     interface IBasketItem
     {
@@ -12,7 +12,10 @@ namespace ShoppingBasket
         double LatestPrice { get; }
         int Quantity { get; set; }
         double TotalItemCost { get; }
-        double Discount { get; }
+        int Discount { get; set; }
+        int DiscountGroup { get; set; }
+
+        int CompareTo(BasketItem that);
 
         // Format of method used to increase the quantity of basket item
         void AddItems(int increase);
