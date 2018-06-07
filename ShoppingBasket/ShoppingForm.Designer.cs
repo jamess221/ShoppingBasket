@@ -1,6 +1,6 @@
 ﻿namespace ShoppingBasket
 {
-    partial class Form1
+    partial class ShoppingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -52,6 +52,7 @@
             // 
             this.productComboBox.FormattingEnabled = true;
             this.productComboBox.Location = new System.Drawing.Point(32, 39);
+            this.productComboBox.MaxDropDownItems = 20;
             this.productComboBox.Name = "productComboBox";
             this.productComboBox.Size = new System.Drawing.Size(146, 21);
             this.productComboBox.TabIndex = 0;
@@ -65,7 +66,6 @@
             this.productNameLabel.Size = new System.Drawing.Size(78, 13);
             this.productNameLabel.TabIndex = 1;
             this.productNameLabel.Text = "Product Name:";
-            this.productNameLabel.Click += new System.EventHandler(this.productNameLabel_Click);
             // 
             // latestPriceLabel
             // 
@@ -88,6 +88,7 @@
             // 
             this.offerText.Location = new System.Drawing.Point(314, 39);
             this.offerText.Name = "offerText";
+            this.offerText.ReadOnly = true;
             this.offerText.Size = new System.Drawing.Size(189, 72);
             this.offerText.TabIndex = 4;
             this.offerText.Text = "";
@@ -121,14 +122,14 @@
             // 
             this.basketText.Location = new System.Drawing.Point(32, 133);
             this.basketText.Name = "basketText";
-            this.basketText.Size = new System.Drawing.Size(770, 173);
+            this.basketText.Size = new System.Drawing.Size(796, 173);
             this.basketText.TabIndex = 8;
             this.basketText.Text = "";
             // 
             // basketLabel
             // 
             this.basketLabel.AutoSize = true;
-            this.basketLabel.Location = new System.Drawing.Point(32, 114);
+            this.basketLabel.Location = new System.Drawing.Point(32, 117);
             this.basketLabel.Name = "basketLabel";
             this.basketLabel.Size = new System.Drawing.Size(43, 13);
             this.basketLabel.TabIndex = 9;
@@ -170,16 +171,17 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(823, 36);
+            this.addButton.Location = new System.Drawing.Point(845, 36);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 14;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(823, 133);
+            this.removeButton.Location = new System.Drawing.Point(845, 133);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 15;
@@ -188,18 +190,18 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(823, 338);
+            this.exitButton.Location = new System.Drawing.Point(845, 338);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 16;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // ShoppingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 372);
+            this.ClientSize = new System.Drawing.Size(932, 372);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);
@@ -217,9 +219,8 @@
             this.Controls.Add(this.latestPriceLabel);
             this.Controls.Add(this.productNameLabel);
             this.Controls.Add(this.productComboBox);
-            this.Name = "Form1";
+            this.Name = "ShoppingForm";
             this.Text = "Shopping Basket";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.quantityInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

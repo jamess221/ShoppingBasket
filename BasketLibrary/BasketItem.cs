@@ -11,18 +11,19 @@ namespace BasketLibrary
         public string ProductName { get; private set; }
         public double LatestPrice { get; private set; }
         public int Quantity { get; set; }
-        public int Discount { get; private set; }
-        public int DiscountGroup { get; private set; }
+        public Offer Offer { get; private set; }
+        // Calculate cost of product with percentage discount applied
+        public double DiscountedPrice { get => LatestPrice * (1 - (Offer.Discount / 100)); }
+        //Calculate the total cost for the quantity
+        public double TotalItemValue { get => Quantity * DiscountedPrice; }
 
-        //Calculate the total item cost accounting for discount
-        public double TotalItemCost { get => (Quantity * LatestPrice) * (1 - (Discount / 100)); }
-
-        public BasketItem(string productName, double latestPrice, int quantity, int discount=0, int discountGroup=0)
+        public BasketItem(string productName, double latestPrice, int quantity, Offer offer)
         {
+            // Set class properties to those passed to the constructor
             ProductName = productName;
             LatestPrice = latestPrice;
             Quantity = quantity;
-            Discount = discount;
+            Offer = offer;
         }
 
         public int CompareTo(BasketItem that)

@@ -22,7 +22,6 @@ C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debu
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.exe
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.pdb
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.Form1.resources
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.Properties.Resources.resources
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csproj.CoreCompileInputs.cache
@@ -31,3 +30,4 @@ C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debu
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.dll
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.pdb
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.dll.config
+C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.ShoppingForm.resources
