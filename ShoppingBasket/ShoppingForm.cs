@@ -29,6 +29,9 @@ namespace ShoppingBasket
         {
             LoadOffers(basket);
             LoadProducts(basket);
+
+            // Set selected item of product combo box to be the first entry
+            productComboBox.SelectedIndex = 0;
         }
 
         private void LoadOffers(BasketLibrary.ShoppingBasket basket)
@@ -49,7 +52,7 @@ namespace ShoppingBasket
                         int realGroup = reader[3] == DBNull.Value ? 0 : Convert.ToInt32(reader[3]);
                         int realDiscount = reader[4] == DBNull.Value ? 0 : Convert.ToInt32(reader[4]);
 
-                        // Add each offer to the list of offers
+                        // Add offer to the list of offers
                         Offer newOffer = new Offer(
                             Convert.ToInt32(reader[0]), (string)reader[1], (string)reader[2]
                             , realGroup, realDiscount);
@@ -79,8 +82,6 @@ namespace ShoppingBasket
                         // get offer details for each product
                         string productName = (String)reader[2];
                         int realOfferId = reader[1] == DBNull.Value ? 0 : Convert.ToInt32(reader[1]);
-
-                        Console.WriteLine(realOfferId);
 
                         basket.AddProduct(productName, 0, Convert.ToDouble(reader[3]), realOfferId);
 
@@ -114,21 +115,36 @@ namespace ShoppingBasket
         private void DrawBasket()
         {
             // Update display to show current state of basket
-            StringBuilder sb = new StringBuilder();
+
+            // Clear the list so we can add the fresh set of items
+            basketList.Items.Clear();
+
             foreach(BasketItem item in basket.BasketItems)
             {
+                // Add another row in the list view for each product that has a quantity more than 0
                 if(item.Quantity > 0)
                 {
-                    sb.AppendLine(String.Format("{0,-35}{1,-20}{2,-100}£{3,-15}£{4,-15}£{5,-15}{6,-50}",
-                        item.ProductName, item.Quantity, item.Offer.Description, item.LatestPrice,
-                        item.DiscountedPrice, item.TotalItemValue, ""));
+                    ListViewItem listItem = new ListViewItem(new[]
+                    {
+                        item.ProductName,
+                        item.Quantity.ToString(),
+                        item.Offer.Description,
+                        String.Format("£{0:0.00}", item.LatestPrice),
+                        String.Format("£{0:0.00}", item.DiscountedPrice),
+                        String.Format("£{0:0.00}", item.TotalItemValue),
+                        ""
+                    });
+                    basketList.Items.Add(listItem);
                 }
             }
 
-            totalText.Text = String.Format("£{0}", basket.BasketTotal);
+            totalText.Text = String.Format("£{0:0.00}", basket.BasketTotal);
             noItemsText.Text = Convert.ToString(basket.NumberOfItems);
+        }
 
-            basketText.Text = sb.ToString();
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

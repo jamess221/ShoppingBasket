@@ -36,16 +36,13 @@ namespace BasketLibrary
         public void AddProduct(string name, int quantity=0, double price=0, int offerId=0)
         {
             // Check if existing basket item using the product name as reference
-            try
-            {
-                // If exists, increase the quantity by passed amount
-                BasketItems.Find(item => item.ProductName == name).AddItems(quantity);
-            }
-            catch (Exception e)
+            // If exists, increase the quantity by passed amount
+            BasketItem basketItem = BasketItems.FirstOrDefault(item => item.ProductName == name);
+                
+            if(basketItem == null)
             {
                 // Create new instance of Offer class with default parameters
                 Offer linkedOffer = new Offer();
-
                 // If offerId is not set, ignore discount and discount group 
                 if (offerId != 0)
                 {
@@ -55,6 +52,11 @@ namespace BasketLibrary
                 // if does not exist, instantiate new BasketItem with passed parameters
                 BasketItem newProduct = new BasketItem(name, price, quantity, linkedOffer);
                 BasketItems.Add(newProduct);
+            }
+            else
+            {
+                // If the product already exists in the basket, just increase the quantity
+                basketItem.AddItems(quantity);
             }
         }
 

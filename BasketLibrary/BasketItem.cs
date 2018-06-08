@@ -12,9 +12,9 @@ namespace BasketLibrary
         public double LatestPrice { get; private set; }
         public int Quantity { get; set; }
         public Offer Offer { get; private set; }
-        // Calculate cost of product with percentage discount applied
-        public double DiscountedPrice { get => LatestPrice * (1 - (Offer.Discount / 100)); }
-        //Calculate the total cost for the quantity
+        // Calculate price of product with percentage discount applied
+        public double DiscountedPrice { get => LatestPrice * (((double)100 - Offer.Discount)/100); }
+        //Calculate the total price for the quantity
         public double TotalItemValue { get => Quantity * DiscountedPrice; }
 
         public BasketItem(string productName, double latestPrice, int quantity, Offer offer)
@@ -24,6 +24,8 @@ namespace BasketLibrary
             LatestPrice = latestPrice;
             Quantity = quantity;
             Offer = offer;
+
+            Console.WriteLine("Discount percentage: {0}, Latest Price: {1}, Discounted price: {2}", Offer.Discount.ToString(), LatestPrice.ToString(), DiscountedPrice.ToString());
         }
 
         public int CompareTo(BasketItem that)

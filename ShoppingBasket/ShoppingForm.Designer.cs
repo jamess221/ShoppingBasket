@@ -36,7 +36,6 @@
             this.offerLabel = new System.Windows.Forms.Label();
             this.quantityLabel = new System.Windows.Forms.Label();
             this.quantityInput = new System.Windows.Forms.NumericUpDown();
-            this.basketText = new System.Windows.Forms.RichTextBox();
             this.basketLabel = new System.Windows.Forms.Label();
             this.noItemsLabel = new System.Windows.Forms.Label();
             this.noItemsText = new System.Windows.Forms.TextBox();
@@ -45,6 +44,14 @@
             this.addButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.basketList = new System.Windows.Forms.ListView();
+            this.product_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.offer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.discount_cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.total_cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.offer_help = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.quantityInput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,17 +121,19 @@
             // quantityInput
             // 
             this.quantityInput.Location = new System.Drawing.Point(516, 39);
+            this.quantityInput.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.quantityInput.Name = "quantityInput";
             this.quantityInput.Size = new System.Drawing.Size(74, 20);
             this.quantityInput.TabIndex = 7;
-            // 
-            // basketText
-            // 
-            this.basketText.Location = new System.Drawing.Point(32, 133);
-            this.basketText.Name = "basketText";
-            this.basketText.Size = new System.Drawing.Size(967, 173);
-            this.basketText.TabIndex = 8;
-            this.basketText.Text = "";
+            this.quantityInput.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // basketLabel
             // 
@@ -198,12 +207,69 @@
             this.exitButton.TabIndex = 16;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // basketList
+            // 
+            this.basketList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.basketList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.product_name,
+            this.quantity,
+            this.offer,
+            this.cost,
+            this.discount_cost,
+            this.total_cost,
+            this.offer_help});
+            this.basketList.Location = new System.Drawing.Point(32, 133);
+            this.basketList.MultiSelect = false;
+            this.basketList.Name = "basketList";
+            this.basketList.ShowGroups = false;
+            this.basketList.Size = new System.Drawing.Size(964, 189);
+            this.basketList.TabIndex = 17;
+            this.basketList.UseCompatibleStateImageBehavior = false;
+            this.basketList.View = System.Windows.Forms.View.Details;
+            // 
+            // product_name
+            // 
+            this.product_name.Text = "Product Name";
+            this.product_name.Width = 150;
+            // 
+            // quantity
+            // 
+            this.quantity.Text = "Quantity";
+            // 
+            // offer
+            // 
+            this.offer.Text = "Offer";
+            this.offer.Width = 215;
+            // 
+            // cost
+            // 
+            this.cost.Text = "Price";
+            // 
+            // discount_cost
+            // 
+            this.discount_cost.Text = "Discounted Price";
+            this.discount_cost.Width = 100;
+            // 
+            // total_cost
+            // 
+            this.total_cost.Text = "Total Price";
+            this.total_cost.Width = 80;
+            // 
+            // offer_help
+            // 
+            this.offer_help.Text = "Applied Offer";
+            this.offer_help.Width = 200;
             // 
             // ShoppingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 373);
+            this.Controls.Add(this.basketList);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);
@@ -212,7 +278,6 @@
             this.Controls.Add(this.noItemsText);
             this.Controls.Add(this.noItemsLabel);
             this.Controls.Add(this.basketLabel);
-            this.Controls.Add(this.basketText);
             this.Controls.Add(this.quantityInput);
             this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.offerLabel);
@@ -221,6 +286,8 @@
             this.Controls.Add(this.latestPriceLabel);
             this.Controls.Add(this.productNameLabel);
             this.Controls.Add(this.productComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ShoppingForm";
             this.Text = "Shopping Basket";
             ((System.ComponentModel.ISupportInitialize)(this.quantityInput)).EndInit();
@@ -239,7 +306,6 @@
         private System.Windows.Forms.Label offerLabel;
         private System.Windows.Forms.Label quantityLabel;
         private System.Windows.Forms.NumericUpDown quantityInput;
-        private System.Windows.Forms.RichTextBox basketText;
         private System.Windows.Forms.Label basketLabel;
         private System.Windows.Forms.Label noItemsLabel;
         private System.Windows.Forms.TextBox noItemsText;
@@ -248,6 +314,14 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ListView basketList;
+        private System.Windows.Forms.ColumnHeader product_name;
+        private System.Windows.Forms.ColumnHeader quantity;
+        private System.Windows.Forms.ColumnHeader offer;
+        private System.Windows.Forms.ColumnHeader cost;
+        private System.Windows.Forms.ColumnHeader discount_cost;
+        private System.Windows.Forms.ColumnHeader total_cost;
+        private System.Windows.Forms.ColumnHeader offer_help;
     }
 }
 
