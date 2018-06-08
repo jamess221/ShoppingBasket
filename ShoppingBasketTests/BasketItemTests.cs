@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ShoppingBasketTests
 {
     [TestClass]
-    public class UnitTest1
+    public class BasketItemTests
     {
         [TestMethod]
         public void TestMethod1()

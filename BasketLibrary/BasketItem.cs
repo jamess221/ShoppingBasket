@@ -14,8 +14,24 @@ namespace BasketLibrary
         public Offer Offer { get; private set; }
         // Calculate price of product with percentage discount applied
         public double DiscountedPrice { get => LatestPrice * (((double)100 - Offer.Discount)/100); }
-        //Calculate the total price for the quantity
-        public double TotalItemValue { get => Quantity * DiscountedPrice; }
+        //Calculate the total price for the quantity with BOGOF applied
+        public double TotalItemValue
+        {
+            get
+            {
+                // There is a space in BOGOF from DB for some reason
+                if (Offer.ShortDescription.Trim() == "BOGOF" && Quantity > 1)
+                {
+                    // IF quantity is 3: (3 - 1) + 1.5
+                    Console.WriteLine("{0} {1}", Quantity % 2, Quantity / 2);
+                    return ((Quantity / 2) + (Quantity % 2)) * LatestPrice;
+                }
+                else
+                {
+                    return Quantity * DiscountedPrice;
+                }
+            }
+        }
 
         public BasketItem(string productName, double latestPrice, int quantity, Offer offer)
         {
@@ -24,8 +40,6 @@ namespace BasketLibrary
             LatestPrice = latestPrice;
             Quantity = quantity;
             Offer = offer;
-
-            Console.WriteLine("Discount percentage: {0}, Latest Price: {1}, Discounted price: {2}", Offer.Discount.ToString(), LatestPrice.ToString(), DiscountedPrice.ToString());
         }
 
         public int CompareTo(BasketItem that)
