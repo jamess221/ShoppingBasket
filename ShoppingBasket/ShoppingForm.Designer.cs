@@ -52,6 +52,7 @@
             this.discount_cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.total_cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.offer_help = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.quantityInput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,10 +180,11 @@
             this.totalText.Size = new System.Drawing.Size(100, 20);
             this.totalText.TabIndex = 13;
             this.totalText.Text = "£0";
+            this.totalText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(1005, 36);
+            this.addButton.Location = new System.Drawing.Point(1096, 36);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 14;
@@ -192,16 +194,17 @@
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(1005, 131);
+            this.removeButton.Location = new System.Drawing.Point(1096, 133);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 15;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(1005, 328);
+            this.exitButton.Location = new System.Drawing.Point(1096, 338);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 16;
@@ -211,6 +214,7 @@
             // 
             // basketList
             // 
+            this.basketList.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.basketList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -222,11 +226,14 @@
             this.discount_cost,
             this.total_cost,
             this.offer_help});
+            this.basketList.FullRowSelect = true;
+            this.basketList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.basketList.HideSelection = false;
             this.basketList.Location = new System.Drawing.Point(32, 133);
             this.basketList.MultiSelect = false;
             this.basketList.Name = "basketList";
             this.basketList.ShowGroups = false;
-            this.basketList.Size = new System.Drawing.Size(964, 189);
+            this.basketList.Size = new System.Drawing.Size(1058, 180);
             this.basketList.TabIndex = 17;
             this.basketList.UseCompatibleStateImageBehavior = false;
             this.basketList.View = System.Windows.Forms.View.Details;
@@ -234,7 +241,7 @@
             // product_name
             // 
             this.product_name.Text = "Product Name";
-            this.product_name.Width = 150;
+            this.product_name.Width = 200;
             // 
             // quantity
             // 
@@ -243,32 +250,46 @@
             // offer
             // 
             this.offer.Text = "Offer";
-            this.offer.Width = 215;
+            this.offer.Width = 300;
             // 
             // cost
             // 
             this.cost.Text = "Price";
+            this.cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discount_cost
             // 
             this.discount_cost.Text = "Discounted Price";
+            this.discount_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.discount_cost.Width = 100;
             // 
             // total_cost
             // 
             this.total_cost.Text = "Total Price";
+            this.total_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.total_cost.Width = 80;
             // 
             // offer_help
             // 
             this.offer_help.Text = "Applied Offer";
-            this.offer_help.Width = 200;
+            this.offer_help.Width = 250;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(1096, 290);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 18;
+            this.clearButton.Text = "Clear basket";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // ShoppingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 373);
+            this.ClientSize = new System.Drawing.Size(1183, 373);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.basketList);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.removeButton);
@@ -322,6 +343,7 @@
         private System.Windows.Forms.ColumnHeader discount_cost;
         private System.Windows.Forms.ColumnHeader total_cost;
         private System.Windows.Forms.ColumnHeader offer_help;
+        private System.Windows.Forms.Button clearButton;
     }
 }
 

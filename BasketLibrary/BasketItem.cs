@@ -12,6 +12,7 @@ namespace BasketLibrary
         public double LatestPrice { get; private set; }
         public int Quantity { get; set; }
         public Offer Offer { get; private set; }
+        public string AppliedOffer { get; set;}
         // Calculate price of product with percentage discount applied
         public double DiscountedPrice { get => LatestPrice * (((double)100 - Offer.Discount)/100); }
         //Calculate the total price for the quantity with BOGOF applied

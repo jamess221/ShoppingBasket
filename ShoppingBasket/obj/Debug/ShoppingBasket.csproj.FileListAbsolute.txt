@@ -31,3 +31,16 @@ C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debu
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.pdb
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.dll.config
 C:\Users\Administrator\Documents\shopping\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.ShoppingForm.resources
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.exe.config
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.exe
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\bin\Debug\ShoppingBasket.pdb
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.dll
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.pdb
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\bin\Debug\BasketLibrary.dll.config
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csprojResolveAssemblyReference.cache
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.ShoppingForm.resources
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.Properties.Resources.resources
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csproj.GenerateResource.Cache
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.csproj.CoreCompileInputs.cache
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.exe
+C:\Users\J\Documents\Git projects\ShoppingBasket\ShoppingBasket\obj\Debug\ShoppingBasket.pdb

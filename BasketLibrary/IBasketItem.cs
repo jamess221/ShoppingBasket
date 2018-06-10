@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BasketLibrary
+﻿namespace BasketLibrary
 {
     interface IBasketItem
     {
@@ -14,6 +8,7 @@ namespace BasketLibrary
         double TotalItemValue { get; }
         double DiscountedPrice { get; }
         Offer Offer { get; }
+        string AppliedOffer { get; set; }
 
         int CompareTo(BasketItem that);
 

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BasketLibrary
+﻿namespace BasketLibrary
 {
-    public class Offer
+    public class Offer : IOffer
     {
         public int OfferId { get; private set; }
         public string Description { get; private set; }

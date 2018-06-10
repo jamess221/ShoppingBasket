@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace BasketLibrary
+namespace BasketLibrary 
 {
-    public class ShoppingBasket
+    public class ShoppingBasket : IShoppingBasket
     {
         public List<BasketItem> BasketItems { get; set; }
 
@@ -14,8 +13,12 @@ namespace BasketLibrary
 
         public double BasketTotal
         {
-            // Return the sum of the TotalItemCost property across all BasketItem in the items list
-            get { return BasketItems.Sum(item => item.TotalItemValue); }
+            // Return the sum of the TotalItemCost property across all BasketItem in the list
+            // Also calculate TFTPOT offers here
+            get
+            {
+                return BasketItems.Sum(item => item.TotalItemValue);
+            }
         }
 
         public int NumberOfItems
@@ -36,7 +39,6 @@ namespace BasketLibrary
         public void AddProduct(string name, int quantity=0, double price=0, int offerId=0)
         {
             // Check if existing basket item using the product name as reference
-            // If exists, increase the quantity by passed amount
             BasketItem basketItem = BasketItems.FirstOrDefault(item => item.ProductName == name);
                 
             if(basketItem == null)

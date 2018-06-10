@@ -146,5 +146,26 @@ namespace ShoppingBasket
         {
             Application.Exit();
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            basket.ClearBasket();
+            DrawBasket();
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            // Check if any row is selected in the list view
+            if (basketList.SelectedItems.Count > 0)
+            {
+                // Remove the product if a something is selected
+                basket.RemoveProduct(basketList.SelectedItems[0].Text);
+                DrawBasket();
+            }
+            else
+            {
+                MessageBox.Show("No product selected");
+            }
+        }
     }
 }
